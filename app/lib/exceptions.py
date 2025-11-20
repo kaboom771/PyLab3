@@ -9,3 +9,7 @@ class NoAvailableSeatsError(TravelAppError):
 class DatabaseError(TravelAppError):
     """Исключение для ошибок базы данных."""
     pass
+
+class AlreadyBookedError(TravelAppError):
+    """Исключение когда пользователь уже бронировал эту путевку."""
+    pass

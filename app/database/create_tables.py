@@ -1,5 +1,5 @@
 from app.database.connection import DBConnection
-from app.database.models import TRIPS_TABLE
+from app.database.models import TRIPS_TABLE, USERS_TABLE, BOOKINGS_TABLE
 from app.lib.logger import setup_logger
 
 logger = setup_logger()
@@ -12,6 +12,8 @@ def create_tables():
         cursor = conn.cursor()
         
         cursor.execute(TRIPS_TABLE)
+        cursor.execute(USERS_TABLE)
+        cursor.execute(BOOKINGS_TABLE)
         
         conn.commit()
         conn.close()

@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./data:/data
+      - ./app:/app
+    environment:
+      - DATABASE_PATH=/data/travel_planner.db
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
